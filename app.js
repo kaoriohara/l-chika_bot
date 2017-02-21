@@ -3,7 +3,7 @@ var fs = require('fs');
  
 var server = http.createServer();
 server.on('request', doRequest);
-server.listen(1234);
+server.listen(process.env.PORT || 5000)
 console.log('Server running!');
  
 // リクエストの処理
