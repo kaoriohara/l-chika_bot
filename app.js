@@ -1,17 +1,11 @@
-vvar http = require('http');
-var fs = require('fs');
+var express = require('express');
+var port = process.env.PORT || 1337;
+var app = express();
  
-var server = http.createServer();
-server.on('request', doRequest);
-server.listen(process.env.PORT || 5000)
-console.log('Server running!');
+app.get('/', function (req, res) {
+  res.send('Hello Express World!');
+});
  
-// リクエストの処理
-function doRequest(req, res) {
-    fs.readFile('./index.html', 'UTF-8', 
-        function(err, data) {
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write(data);
-            res.end();
-        });
-}
+app.listen(port, function () {
+  console.log('Example app listening on port ' + port + '!');
+});
