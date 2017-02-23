@@ -6,7 +6,7 @@
   "subdomain": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "node Gruntfile.js"
   },
   "author": {
     "name": "k_ohara",
